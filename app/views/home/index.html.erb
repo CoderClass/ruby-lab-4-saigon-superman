@@ -1,7 +1,13 @@
 <h1>Welcome</h1>
 <p>This is a basic chat app</p>
 <br>
-	<%= form_for @room do |f| %>
+<%= form_for @room do |f| %>
 	<%= f.text_field :name %>
 	<%= f.submit %>
-	<% end %>
+<% end %>
+
+
+<% @rooms.each do |room| %>
+<%= link_to room.name, room_path(room.id) %>
+
+<% end %>
